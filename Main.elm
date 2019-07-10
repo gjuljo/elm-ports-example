@@ -80,19 +80,13 @@ testData =
     { name = "ciccio", age = 33 }
 
 
-sendSomeData : Msg
-sendSomeData =
-    SendDataToJavaScript testData
-
-
-
 -- VIEW
 
 
 view : Model -> Html Msg
 view model =
     div []
-        [ button [ style "border" "none", style "color" "white", style "background-color" "#4CAF50", style "width" "100px", onClick sendSomeData ] [ text "Send JSON" ]
+        [ button [ style "border" "none", style "color" "white", style "background-color" "#4CAF50", style "width" "100px", onClick (SendDataToJavaScript testData) ] [ text "Send JSON" ]
         , br [] []
         , button [ style "border" "none", style "color" "white", style "background-color" "#4CAF50", style "width" "100px", onClick RequestIntegerFromJavaScript ] [ text "Gen Random" ]
         , br [] []
